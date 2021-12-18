@@ -1,0 +1,328 @@
+* {
+
+	border: 0%;
+	padding: 0%;
+	margin: 0%;
+	font-family: Arial black, Arial, Tahoma, Serif;
+}
+
+
+#div1 {
+
+	height: 100vh;
+
+}
+
+.divSecciones {
+
+	display: flex;
+	justify-content: center;
+
+}
+
+
+header {
+
+	background-color: black;
+	height: 15vh;
+	position: fixed;
+   	top: 0px;
+   	text-align: center;
+   	display: flex;
+	justify-content: space-between;
+}
+
+#primerTexto {
+
+	color: #FF4500;
+	width: 10%;
+	padding-top: 2vh;
+}
+
+#titulo {
+
+	text-decoration: none;
+	padding-top: 4vh;
+	margin-left: -12vh;
+
+}
+
+#divPerfil {
+
+	display: flex;
+	align-items: center;
+
+}
+
+#username {
+
+	color: #FF4500;
+	text-decoration: none;
+	padding-right: 0.5vw;
+	border-right: 2px solid;
+	border-color: white;
+
+}
+
+#logout {
+
+	color: #FF4500;
+	text-decoration: none;
+	padding-left: 0.5vw;
+
+}
+
+#imagenPerfil {
+
+	justify-content: 
+	width: 2.5vw;
+	height: 5vh;
+}
+
+h1 {
+
+	color: #FF4500;
+
+}
+
+#sectionDiv {
+
+	margin-top: 18vh;
+
+}
+
+#navbar {
+
+	background-color: #8b4513;
+	height: 6vh;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	display: flex;
+	justify-content: center;
+
+}
+
+#navUl {
+
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+
+}
+
+.navItems {
+
+	float: left;
+
+}
+
+.navItems a {
+
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navItems a:hover {
+
+	color: #FF4500;
+
+}
+
+
+section {
+
+	background-color: white;
+	height: 170vh;
+
+}
+
+#divNuevos {
+
+	width: 100%;
+	margin-top: 4vh;
+	padding: 2vw;
+	display: flex;
+	justify-content: space-between;
+}
+
+#divTop {
+
+	display: flex;
+	justify-content: space-between;
+	padding: 2vw;
+
+}
+
+#divBot {
+
+	display: flex;
+	justify-content: space-between;
+	padding: 2vw;
+
+}
+
+#DivTitulosReservar {
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1vw;
+
+}
+
+#botonVer {
+
+	width: 6vw;
+	height: 5vh;
+	text-align: center;
+	margin-bottom: 2%;
+	background-color: black;
+	border: 0px;
+	border-radius: 3px;
+	color: white;
+
+}
+
+#botonVer2 {
+
+	width: 6vw;
+	height: 5vh;
+	text-align: center;
+	margin-bottom: 2%;
+	background-color: white;
+	border: 0px;
+	border-radius: 3px;
+	color: black;
+
+}
+
+.divPortadas {
+
+	float: left;
+	margin-top: 2vh;
+	text-align: center;
+
+}
+
+.imagenesNuevos {
+
+	width: 90%;
+	height: 30vh;
+	border-radius: 10px;
+	margin-bottom: 0.5vh;
+
+}
+
+.botonesComentar {
+
+	margin-top: 2vh;
+	background-color: #FF4500;
+	border: 0;
+	padding: 0.5vw;
+	border-radius: 3px;
+
+}
+
+.botonesComentar:hover {
+
+	background-color: #FF7F50;
+
+}
+
+.botonesModificar {
+
+	margin-top: 2vh;
+	background-color: #FF4500;
+	border: 0;
+	padding: 0.5vw;
+	border-radius: 3px;
+
+}
+
+.botonesModificar:hover {
+
+	background-color: #FF7F50;
+
+}
+
+#divReserva {
+
+	width: 102.2%;
+	background-color: black;
+	margin-top: 4vh;
+	padding: 2vw;
+	margin-left: -0.7vw;
+	color: white;
+
+}
+
+.descripcionJuego {
+
+	margin-top: 2vh;
+	height: 5vh;
+
+}
+
+#divAñadir {
+
+	width: 100%;
+	height: 35vh;
+	margin-top: 4vh;
+	padding: 2vw;
+	text-align: center;
+
+}
+
+#divTextoAñadir {
+
+	padding: 2vw;
+}
+
+#botonAnadir {
+
+	background-color: #FF4500;
+	border: 0;
+	border-radius: 5px;
+	padding: 1vw;
+
+}
+
+#botonAnadir:hover {
+
+	background-color: #FF7F50;
+
+}
+
+
+footer {
+
+	background-color: black;
+	height: 15vh;
+	color: #FF4500;
+	text-align: center;
+
+}
+
+.logos {
+
+	width: 2vw;
+	height: 4vh;
+	margin-left: 1vw;
+	margin-bottom: 2vh;
+
+}
+
+
+#divAñadirJuego {
+
+	width: 80%;
+	background-color: white;
+	margin-top: 20vh;
+	height: 10vh;
+
+}
