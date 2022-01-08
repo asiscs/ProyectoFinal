@@ -30,29 +30,29 @@
                         <div id="divHeader" class="row">
                             <header class="col-12">
 
-                                    <p id="primerTexto">¡Comparte tu experiencia con otros usuarios!</p>
+                                <p class="col-xl-1 col-md-2" id="primerTexto">¡Comparte tu experiencia con otros usuarios!</p>
+                            
+                                <a id="titulo" href="{{ route('landing') }}"><img id="logo" src="images/logo.png"></a>
+
                                 
-                                    <a id="titulo" href="{{ route('landing') }}"><h1>GAMESBLOG</h1></a>
+                                <div class="col-xl-1 col-md-2" id="divPerfil">
 
-                                    <div id="divPerfil">
+                                    @if (Auth::guest())
 
-                                        @if (Auth::guest())
+                                        <a href="{{ route('loginFoto') }}"><img id="imagenPerfil" src="images/perfil.png"></a>
 
-                                            <a href="{{ route('loginFoto') }}"><img id="imagenPerfil" src="images/perfil.png"></a>
+                                    @else
 
-                                        @else
+                                        <a id="username" href="#">{{ Auth::user()->name }}</a>
+                                        <a id="logout" href="{{ url('/logout') }}"> Cerrar sesion </a>
 
-                                            <a id="username" href="#">{{ Auth::user()->name }}</a>
-                                            <a id="logout" href="{{ url('/logout') }}"> Cerrar sesion </a>
-
-                                        @endif
-                        
-                                    </div>
+                                    @endif
+                                </div>
 
                             </header>
                         </div>
 
-        <section class="col-8">
+        <section class="col-xl-8 col-md-10">
 
         	<div id="divNuevos container-fluid">
 
@@ -60,22 +60,15 @@
 
         		@foreach($juegosMostrar as $juego)
 
-        		
-
-					<div class="divPortadas col-3">
-
-						<form method="POST" action="http://127.0.0.1:8000/relacionarJuegos/{{$juego->id}}" enctype="multipart/form-data">
-						@csrf
+					<div class="divPortadas col-xl-3 col-md-6">
 							
 						<img class="imagenesNuevos" src="images/{{$juego->ruta}}">
 
 						<h7 class="titulos1">{{$juego->titulo}}</h7>
 
-						<br>
+						<p class="descripcionJuego">{{ Str::limit($juego->descripcion, 50) }}</p>
 
-						<input class="botonesComentar" type="submit" name="Reservar" value="Reservar">
-
-					</form>
+						<a class="col-2" href="{{ route('modificarDescripcion', $juego->id ) }}"><input class="botonMod" type="submit" name="Modificar" value="Modificar"></a>
 
 				</div>
 

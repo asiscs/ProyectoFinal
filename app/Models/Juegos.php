@@ -19,6 +19,7 @@ class Juegos extends Model
         'idUsuario',
         'nombreImagen',
         'ruta',
+        'stock',
     ];
 
     public function users() {

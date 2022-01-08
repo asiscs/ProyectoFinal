@@ -30,12 +30,12 @@
 		<div id="divHeader" class="row">
 			<header class="col-12">
 
-					<p id="primerTexto">¡Comparte tu experiencia con otros usuarios!</p>
+					<p class="col-xl-1 col-md-2" id="primerTexto">¡Comparte tu experiencia con otros usuarios!</p>
 				
-					<a id="titulo" href="#div1"><h1>GAMESBLOG</h1></a>
+					<a id="titulo" href="#div1"><img id="logo" src="images/logo.png"></a>
 
 					
-					<div id="divPerfil">
+					<div class="col-xl-1 col-md-2" id="divPerfil">
 
 					@if (Auth::guest())
 
@@ -57,7 +57,7 @@
 
 		<div id="sectionDiv" class="row divSecciones">
 
-			<div id="navbar" class="col-8">
+			<div id="navbar" class="col-xl-8 col-md-10">
 				
 				<ul id="navUl">
 					
@@ -81,7 +81,7 @@
 
 			</div>
 
-			<section class="col-8">
+			<section class="col-xl-8 col-md-10">
 
 				
 				
@@ -91,9 +91,9 @@
 
 						<div id="DivTitulosReservar" class="row">
 							
-						<h6 id="tituloReservar" class="col-2">Reservar juegos</h6>
+						<h6 id="tituloReservar" class="col-xl-2 col-md-4">Reservar juegos</h6>
 
-						<a class="col-2" href="{{ route('mostrarJuegos') }}"><input id="botonVer" type="submit" name="Vertodo" value="Ver todo"></a>
+						<a class="col-xl-2 col-md-4" href="{{ route('mostrarJuegos') }}"><input id="botonVer" type="submit" name="Vertodo" value="Ver todo"></a>
 
 						</div>
 
@@ -101,9 +101,9 @@
 
         		
 
-					<div class="divPortadas col-3">
+					<div class="divPortadas col-xl-3 col-md-5 mb-md-4">
 
-						<form method="POST" action="http://127.0.0.1:8000/relacionarJuegos/{{$juego->id}}" enctype="multipart/form-data">
+						<form method="POST" action="{{ route('relacionarJuegos', $juego->id ) }}" enctype="multipart/form-data">
 						@csrf
 							
 						<img class="imagenesNuevos" src="images/{{$juego->ruta}}">
@@ -112,7 +112,15 @@
 
 						<br>
 
+						@if($juego->stock == 0)
+
+						<span id="textoStock">FUERA DE STOCK</span>
+
+						@else
+
 						<input class="botonesComentar" type="submit" name="Reservar" value="Reservar">
+
+						@endif
 
 						</form>
 
@@ -132,20 +140,15 @@
 
 						<div id="DivTitulosReservar" class="row">
 							
-						<h6 id="tituloReservar" class="col-3">Modificar descripción</h6>
+						<h6 id="tituloReservar" class="col-xl-2 col-md-5">Modificar descripción</h6>
 
-						<a class="col-2" href="{{ route('mostrarJuegos') }}"><input id="botonVer2" type="submit" name="Vertodo" value="Ver todo"></a>
+						<a class="col-xl-2 col-md-4" href="{{ route('mostrarJuegosModificar') }}"><input id="botonVer2" type="submit" name="Vertodo" value="Ver todo"></a>
 
-						</div>
+					</div>
 
-					@foreach($juegosMostrar as $juego)
+					@foreach($juegosMostrarAbajo as $juego)
 
-        		
-
-					<div class="divPortadas col-3">
-
-						<form method="POST" action="http://127.0.0.1:8000/relacionarJuegos/{{$juego->id}}" enctype="multipart/form-data">
-						@csrf
+					<div class="divPortadas col-xl-3 col-md-5 mb-md-4">
 							
 						<img class="imagenesNuevos" src="images/{{$juego->ruta}}">
 
@@ -153,9 +156,7 @@
 
 						<p class="descripcionJuego">{{ Str::limit($juego->descripcion, 50) }}</p>
 
-						<input class="botonesModificar" type="submit" name="Modificar" value="Modificar">
-
-						</form>
+						<a class="col-xl-1 col-md-2" href="{{ route('modificarDescripcion', $juego->id ) }}"><input class="botonMod" type="submit" name="Modificar" value="Modificar"></a>
 
 					</div>
 
@@ -167,14 +168,20 @@
 				</div>
 
 				<div id="divAñadir">
-					
-					<h3>Añadir</h3>
 
 					<div id="divTextoAñadir">
+
+						<h3>Añadir</h3>
 						
-						<p>En esta comunidad todos nos ayudamos entre todos, es por ello que para los usuarios registrados habilitamos un botón en el que se les permitirá añadir videojuegos para que otros usuarios le echen un vistazo.<br></p>
+						<p id="parrafoAñadir">En esta comunidad todos nos ayudamos entre todos, es por ello que para los usuarios registrados habilitamos un botón en el que se les permitirá añadir videojuegos para que otros usuarios le echen un vistazo.<br></p>
 
 						<a href="{{ route('añadirJuegos') }}"><input id="botonAnadir" type="submit" name="anadir" value="AÑADIR"></a>
+
+					</div>
+
+					<div id="divImagenGrupo">
+						
+						<img id="imagenGrupo" src="images/grupo.jpg">
 
 					</div>
 

@@ -35,7 +35,6 @@ header {
 #primerTexto {
 
 	color: #FF4500;
-	width: 10%;
 	padding-top: 2vh;
 }
 
@@ -43,16 +42,40 @@ header {
 
 	text-decoration: none;
 	padding-top: 4vh;
-	margin-left: -12vh;
+	text-align: center;
+
+}
+
+#divPerfil {
+
+	display: flex;
+	align-items: center;
+
+}
+
+#username {
+
+	color: #FF4500;
+	text-decoration: none;
+	padding-right: 0.5vw;
+	border-right: 2px solid;
+	border-color: white;
+
+}
+
+#logout {
+
+	color: #FF4500;
+	text-decoration: none;
+	padding-left: 0.5vw;
 
 }
 
 #imagenPerfil {
 
-	justify-content: 
-	width: 5vw;
-	height: 10vh;
-	padding-top: 4vh;
+	margin-left: 180%;
+	width: 2.5vw;
+	height: 5vh;
 }
 
 #logo {
@@ -60,7 +83,6 @@ header {
 	width: 400px;
 
 }
-
 
 footer {
 
@@ -86,5 +108,32 @@ footer {
 #login {
 
 	margin-top: 20vh;
+
+}
+
+#botonModFinal {
+
+	margin-top: 3%;
+
+}
+
+#parrafoMod {
+
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%; 
+
+}
+
+#Redes {
+
+	margin-top: 2vh;
+	width: 10vw;
+
+}
+
+#botonAna {
+
+	margin-top: 2vh;
 
 }

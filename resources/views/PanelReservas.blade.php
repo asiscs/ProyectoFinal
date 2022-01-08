@@ -32,7 +32,7 @@
 
                                     <p id="primerTexto">¡Comparte tu experiencia con otros usuarios!</p>
                                 
-                                    <a id="titulo" href="{{ route('landing') }}"><h1>GAMESBLOG</h1></a>
+                                    <a id="titulo" href="{{ route('landing') }}"><img id="logo" src="images/logo.png"></a>
 
                                     <div id="divPerfil">
 

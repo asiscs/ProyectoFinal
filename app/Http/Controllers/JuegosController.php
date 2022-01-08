@@ -36,15 +36,14 @@ class JuegosController extends Controller
 	        $entrada = $request->file('portada')->getClientOriginalName();
 	        $request->file('portada')->move('images', $entrada);
 
-        return Juegos::create([
+        Juegos::create([
             'titulo' => $request->input('titulo'),
             'precio' => $request->input('precio'),
             'descripcion' => $request->input('descripcion'),
             'idUsuario' => Auth::user()->id,
             'ruta' => $entrada,
+            'stock' => $request->input('stock'),
         ]);
-
-
 
        return redirect()->route('landing');
 
@@ -57,6 +56,10 @@ class JuegosController extends Controller
 
     	$juego = Juegos::find($idJuego);
 
+    	$juego->stock = $juego->stock - 1;
+
+    	$juego->save();
+
     	$juego->users()->attach($idUsuario);
 
     	return redirect('/');
@@ -67,15 +70,49 @@ class JuegosController extends Controller
 
     	$juegosMostrar = Juegos::all();
 
-    	return view('prueba1')->with('juegosMostrar', $juegosMostrar);
+    	return view('verTodo1')->with('juegosMostrar', $juegosMostrar);
+
+    }
+
+    public function modificarDescripcion($id) {
+
+    	$idJuego = $id;
+
+    	return view('modDescView')->with('idJuego', $idJuego);
+
+    }
+
+    public function realizarUpdate(Request $request, $idJuego) {
+
+    	$id = $idJuego;
+
+    	$nuevaDesc = $request->input('descripcionNueva');
+
+    	$juegoEsp = Juegos::find($id);
+
+    	$juegoEsp->descripcion = $nuevaDesc;
+
+    	$juegoEsp->save();
+
+    	return redirect('/');
+
+    }
+
+    public function mostrarJuegosModificar() {
+
+    	$juegosMostrar = Juegos::all();
+
+    	return view('verTodo2')->with('juegosMostrar', $juegosMostrar);
 
     }
 
     public function mostrarJuegosLanding() {
 
-    	$juegosMostrar = Juegos::all();
+    	$juegosMostrar = Juegos::all()->take(4);
 
-    	return view('landingPage')->with('juegosMostrar', $juegosMostrar);
+    	$juegosMostrarAbajo = Juegos::orderBy('id', 'desc')->take(4)->get();
+
+    	return view('landingPage')->with('juegosMostrar', $juegosMostrar)->with('juegosMostrarAbajo', $juegosMostrarAbajo);
 
     }
 

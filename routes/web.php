@@ -36,6 +36,12 @@ Route::post('/añadirJuegosPost',[JuegosController::class, 'create'])->name('añ
 
 Route::get('/mostrarJuegos',[JuegosController::class, 'mostrarJuegos'])->name('mostrarJuegos');
 
+Route::get('/modificarDescripcion/{id}',[JuegosController::class, 'modificarDescripcion'])->name('modificarDescripcion');
+
+Route::post('/realizarUpdate/{idJuego}',[JuegosController::class, 'realizarUpdate'])->name('realizarUpdate');
+
+Route::get('/mostrarJuegosModificar',[JuegosController::class, 'mostrarJuegosModificar'])->name('mostrarJuegosModificar');
+
 Route::get('/reservasPanel',[JuegosController::class, 'reservasPanel'])->name('reservasPanel');
 
 Route::get('/adminPanel',[JuegosController::class, 'adminPanel'])->name('adminPanel');

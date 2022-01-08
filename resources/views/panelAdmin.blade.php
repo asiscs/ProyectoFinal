@@ -30,11 +30,12 @@
                         <div id="divHeader" class="row">
                             <header class="col-12">
 
-                                    <p id="primerTexto">¡Comparte tu experiencia con otros usuarios!</p>
+                                    <p class="col-xl-1 col-md-2" id="primerTexto">¡Comparte tu experiencia con otros usuarios!</p>
                                 
-                                    <a id="titulo" href="{{ route('landing') }}"><h1>GAMESBLOG</h1></a>
+                                    <a id="titulo" href="{{ route('landing') }}"><img id="logo" src="images/logo.png"></a>
 
-                                    <div id="divPerfil">
+                                    
+                                    <div class="col-xl-1 col-md-2" id="divPerfil">
 
                                     @if (Auth::guest())
 
@@ -47,14 +48,14 @@
 
                                     @endif
 
-                        
+                                        
 
-                    </div>
+                                    </div>
 
                             </header>
                         </div>
 
-            <section class="col-8">
+            <section id="seccionUsu" class="col-8">
 
 
                         <table id="tablaUsuarios">
